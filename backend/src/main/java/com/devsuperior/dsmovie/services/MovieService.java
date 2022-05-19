@@ -29,4 +29,9 @@ public class MovieService {
 		MovieDTO dto = new MovieDTO(result);
 		return dto;
 	}
+
+	@Transactional
+	public Movie saveMovie(Movie movie) {
+		return repository.save(movie);
+	}
 }

@@ -6,6 +6,7 @@ import {
 import Listing from 'pages/Listing';
 import Form from 'pages/Form';
 import Navbar from "components/Navbar";
+import Register from "pages/Register";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path="/form">
           <Route path=":movieId" element={<Form />} />
         </Route>
+        <Route path="/cadastrar-filme" element={<Register/>}></Route>
       </Routes>
     </BrowserRouter>
   );

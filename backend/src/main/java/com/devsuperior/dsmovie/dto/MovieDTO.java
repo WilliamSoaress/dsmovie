@@ -9,16 +9,18 @@ public class MovieDTO {
 	private Double score;
 	private Integer count;
 	private String image;
+	private String trailer;
 
 	public MovieDTO() {
 	}
 
-	public MovieDTO(Long id, String title, Double score, Integer count, String image) {
+	public MovieDTO(Long id, String title, Double score, Integer count, String image, String trailer) {
 		this.id = id;
 		this.title = title;
 		this.score = score;
 		this.count = count;
 		this.image = image;
+		this.trailer = trailer;
 	}
 
 	public MovieDTO(Movie movie) {
@@ -27,6 +29,7 @@ public class MovieDTO {
 		score = movie.getScore();
 		count = movie.getCount();
 		image = movie.getImage();
+		trailer = movie.getTrailer();
 	}
 
 	public Long getId() {
@@ -69,4 +72,11 @@ public class MovieDTO {
 		this.image = image;
 	}
 
+	public String getTrailer() {
+		return trailer;
+	}
+
+	public void setTrailer(String trailer) {
+		this.trailer = trailer;
+	}
 }

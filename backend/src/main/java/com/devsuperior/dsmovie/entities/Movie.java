@@ -21,6 +21,7 @@ public class Movie {
 	private Double score;
 	private Integer count;
 	private String image;
+	private String trailer;
 	
 	@OneToMany(mappedBy = "id.movie")
 	private Set<Score> scores = new HashSet<>();
@@ -29,12 +30,13 @@ public class Movie {
 
 	}
 
-	public Movie(Long id, String title, Double score, Integer count, String image) {
+	public Movie(Long id, String title, Double score, Integer count, String image, String trailer) {
 		this.id = id;
 		this.title = title;
 		this.score = score;
 		this.count = count;
 		this.image = image;
+		this.trailer = trailer;
 	}
 
 	public Long getId() {
@@ -75,6 +77,14 @@ public class Movie {
 
 	public void setImage(String image) {
 		this.image = image;
+	}
+
+	public String getTrailer() {
+		return trailer;
+	}
+
+	public void setTrailer(String trailer) {
+		this.trailer = trailer;
 	}
 
 	public Set<Score> getScores() {
