@@ -1,0 +1,15 @@
+<div class="flex-container">
+  <div class="flex-item" *ngFor="let movie of movies">
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>{{ movie.title }}</mat-card-title>
+      </mat-card-header>
+      <img mat-card-image src="{{ movie.photoURL }}" alt="Movie photo" />
+      <mat-card-content> </mat-card-content>
+      <mat-card-actions>
+        <button mat-raised-button color="primary">Avaliar</button>
+        <button mat-raised-button>Trailer</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</div>
