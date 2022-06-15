@@ -1,7 +1,7 @@
 export interface Movie {
   id: number;
   title: string;
-  photoURL: string;
+  image: string;
   score: number;
   count: number;
 }

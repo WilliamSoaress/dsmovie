@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 import { Movie } from 'src/app/shared/models/movie';
+import { MovieService } from 'src/app/shared/services/movie.service';
 
 @Component({
   selector: 'app-home',
@@ -7,122 +9,12 @@ import { Movie } from 'src/app/shared/models/movie';
   styleUrls: ['./home.component.css'],
 })
 export class HomeComponent implements OnInit {
-  movies: Movie[] = [
-    {
-      id: 1,
-      title: 'The Witcher',
-      photoURL:
-        'https://www.themoviedb.org/t/p/w533_and_h300_bestv2/jBJWaqoSCiARWtfV0GlqHrcdidd.jpg',
-      count: 2,
-      score: 4.5,
-    },
-    {
-      id: 1,
-      title: 'The Witcher',
-      photoURL:
-        'https://www.themoviedb.org/t/p/w533_and_h300_bestv2/jBJWaqoSCiARWtfV0GlqHrcdidd.jpg',
-      count: 2,
-      score: 4.5,
-    },
-    {
-      id: 1,
-      title: 'The Witcher',
-      photoURL:
-        'https://www.themoviedb.org/t/p/w533_and_h300_bestv2/jBJWaqoSCiARWtfV0GlqHrcdidd.jpg',
-      count: 2,
-      score: 4.5,
-    },
-    {
-      id: 1,
-      title: 'The Witcher',
-      photoURL:
-        'https://www.themoviedb.org/t/p/w533_and_h300_bestv2/jBJWaqoSCiARWtfV0GlqHrcdidd.jpg',
-      count: 2,
-      score: 4.5,
-    },
-    {
-      id: 1,
-      title: 'The Witcher',
-      photoURL:
-        'https://www.themoviedb.org/t/p/w533_and_h300_bestv2/jBJWaqoSCiARWtfV0GlqHrcdidd.jpg',
-      count: 2,
-      score: 4.5,
-    },
-    {
-      id: 1,
-      title: 'The Witcher',
-      photoURL:
-        'https://www.themoviedb.org/t/p/w533_and_h300_bestv2/jBJWaqoSCiARWtfV0GlqHrcdidd.jpg',
-      count: 2,
-      score: 4.5,
-    },
-    {
-      id: 1,
-      title: 'The Witcher',
-      photoURL:
-        'https://www.themoviedb.org/t/p/w533_and_h300_bestv2/jBJWaqoSCiARWtfV0GlqHrcdidd.jpg',
-      count: 2,
-      score: 4.5,
-    },
-    {
-      id: 1,
-      title: 'The Witcher',
-      photoURL:
-        'https://www.themoviedb.org/t/p/w533_and_h300_bestv2/jBJWaqoSCiARWtfV0GlqHrcdidd.jpg',
-      count: 2,
-      score: 4.5,
-    },
-    {
-      id: 1,
-      title: 'The Witcher',
-      photoURL:
-        'https://www.themoviedb.org/t/p/w533_and_h300_bestv2/jBJWaqoSCiARWtfV0GlqHrcdidd.jpg',
-      count: 2,
-      score: 4.5,
-    },
-    {
-      id: 1,
-      title: 'The Witcher',
-      photoURL:
-        'https://www.themoviedb.org/t/p/w533_and_h300_bestv2/jBJWaqoSCiARWtfV0GlqHrcdidd.jpg',
-      count: 2,
-      score: 4.5,
-    },
-    {
-      id: 1,
-      title: 'The Witcher',
-      photoURL:
-        'https://www.themoviedb.org/t/p/w533_and_h300_bestv2/jBJWaqoSCiARWtfV0GlqHrcdidd.jpg',
-      count: 2,
-      score: 4.5,
-    },
-    {
-      id: 1,
-      title: 'The Witcher',
-      photoURL:
-        'https://www.themoviedb.org/t/p/w533_and_h300_bestv2/jBJWaqoSCiARWtfV0GlqHrcdidd.jpg',
-      count: 2,
-      score: 4.5,
-    },
-    {
-      id: 1,
-      title: 'The Witcher',
-      photoURL:
-        'https://www.themoviedb.org/t/p/w533_and_h300_bestv2/jBJWaqoSCiARWtfV0GlqHrcdidd.jpg',
-      count: 2,
-      score: 4.5,
-    },
-    {
-      id: 1,
-      title: 'The Witcher',
-      photoURL:
-        'https://www.themoviedb.org/t/p/w533_and_h300_bestv2/jBJWaqoSCiARWtfV0GlqHrcdidd.jpg',
-      count: 2,
-      score: 4.5,
-    },
-  ];
+  movies$: Observable<Movie[]>;
 
-  constructor() {}
+  constructor(private movieService: MovieService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    //Obtém todos os filmes salvos
+    this.movies$ = this.movieService.readAll();
+  }
 }
