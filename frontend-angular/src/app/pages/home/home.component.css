@@ -22,3 +22,17 @@
 .flex-item mat-card-title {
   text-align: center;
 }
+
+/* Container do score */
+.score {
+  display: flex;
+  width: auto;
+  flex-direction: column;
+}
+
+/* Texto de apresentação do score */
+.score p {
+  text-align: center;
+  font-size: 20px;
+  color: orange;
+}
