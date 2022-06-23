@@ -10,9 +10,10 @@ import { MaterialModule } from './shared/material/material.module';
 import { HttpClientModule } from '@angular/common/http';
 import { DetailsComponent } from './pages/home/details/details.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { RateMovieComponent } from './pages/home/rate-movie/rate-movie.component';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, DetailsComponent],
+  declarations: [AppComponent, HomeComponent, DetailsComponent, RateMovieComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

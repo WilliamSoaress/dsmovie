@@ -203,5 +203,19 @@
       "score": 0,
       "count": 0
     }
+  ],
+  "tb_score": [
+    {
+      "id": 1,
+      "email": "teste@teste.com",
+      "score": "4",
+      "movie": "1"
+    },
+    {
+      "id": 2,
+      "email": "teste@teste.com",
+      "score_id": "4",
+      "movie_id": "1"
+    }
   ]
 }

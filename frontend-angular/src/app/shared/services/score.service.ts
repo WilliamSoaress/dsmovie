@@ -2,16 +2,16 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, take } from 'rxjs';
 import { environment } from 'src/environments/environment';
-import { Movie } from '../models/movie';
+import { Score } from '../models/score';
 
 @Injectable({
   providedIn: 'root',
 })
-export class MovieService {
+export class ScoreService {
   /**
    * Endpoint a ser utilizado pelo service
    */
-  private readonly endpoint: string = '/tb_movie';
+  private readonly endpoint: string = '/tb_score';
 
   constructor(private http: HttpClient) {}
 
@@ -19,20 +19,16 @@ export class MovieService {
    * Obtém todos os registros existentes no endpoint informado
    * @returns Observable com todos os registros
    */
-  public readAll(): Observable<Movie[]> {
+  public readAll(): Observable<Score[]> {
     return this.http
-      .get<Movie[]>(`${environment.API_URL}${this.endpoint}`)
+      .get<Score[]>(`${environment.API_URL}${this.endpoint}`)
       .pipe(take(1));
   }
 
-  public create(record: Movie): Observable<Movie> {
-    return this.http.post<Movie>(
+  public create(record: Score): Observable<Score> {
+    return this.http.post<Score>(
       `${environment.API_URL}${this.endpoint}`,
       record
     );
-  }
-
-  public readById(id: number): Observable<Movie> {
-    return this.http.get<Movie>(`${environment.API_URL}${this.endpoint}/${id}`);
   }
 }

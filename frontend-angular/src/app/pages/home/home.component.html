@@ -14,7 +14,9 @@
         </div>
       </mat-card-content>
       <mat-card-actions>
-        <button mat-raised-button color="primary">Avaliar</button>
+        <button mat-raised-button (click)="onRate(movie.id)" color="primary">
+          Avaliar
+        </button>
         <button mat-raised-button>Trailer</button>
       </mat-card-actions>
     </mat-card>
