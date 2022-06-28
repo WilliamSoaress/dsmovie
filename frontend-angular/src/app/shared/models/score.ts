@@ -2,7 +2,7 @@ import { Movie } from './movie';
 
 export interface Score {
   id: number;
-  movie_id: Movie;
+  movie: Movie;
   email: string;
-  value: number;
+  score: number;
 }

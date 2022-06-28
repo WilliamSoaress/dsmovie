@@ -32,7 +32,7 @@ export class RateMovieComponent implements OnInit {
       id: [null],
       email: [null, [Validators.email, Validators.required]],
       score: [0.0, [Validators.required]],
-      movie_id: [null, [Validators.required]],
+      movie: [null, [Validators.required]],
     });
   }
 
@@ -58,7 +58,7 @@ export class RateMovieComponent implements OnInit {
   submit() {
     //Adiciona o id do filme em que a avaliação foi registrada
     this.form.patchValue({
-      movie_id: this.movieId,
+      movie: this.movieId,
     });
     this.scoreService.create(this.form.value).subscribe({
       next: () => {

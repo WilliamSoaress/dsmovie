@@ -214,8 +214,14 @@
     {
       "id": 2,
       "email": "teste@teste.com",
-      "score_id": "4",
-      "movie_id": "1"
+      "score": "4",
+      "movie": "1"
+    },
+    {
+      "id": 3,
+      "email": "teste@teste.com",
+      "score": "5",
+      "movie": "3"
     }
   ]
 }
