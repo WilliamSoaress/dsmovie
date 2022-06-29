@@ -208,20 +208,176 @@
     {
       "id": 1,
       "email": "teste@teste.com",
-      "score": "4",
-      "movie": "1"
+      "score": 4,
+      "movie": 1
     },
     {
       "id": 2,
       "email": "teste@teste.com",
-      "score": "4",
-      "movie": "1"
+      "score": 4,
+      "movie": 1
     },
     {
       "id": 3,
       "email": "teste@teste.com",
-      "score": "5",
-      "movie": "3"
+      "score": 5,
+      "movie": 3
+    },
+    {
+      "id": 4,
+      "email": "teste@teste.com",
+      "score": 2,
+      "movie": 1
+    },
+    {
+      "id": 5,
+      "email": "teste@teste.com",
+      "score": 2,
+      "movie": 1
+    },
+    {
+      "id": 6,
+      "email": "teste@teste.com",
+      "score": 3,
+      "movie": 2
+    },
+    {
+      "id": 7,
+      "email": "teste@teste.com",
+      "score": 1,
+      "movie": 2
+    },
+    {
+      "id": 8,
+      "email": "teste@teste.com",
+      "movie": 5,
+      "score": 1
+    },
+    {
+      "id": 9,
+      "email": "teste@teste.com",
+      "movie": 2,
+      "score": 1
+    },
+    {
+      "id": 25,
+      "email": "teste@teste.com",
+      "score": 2,
+      "movie": 3
+    },
+    {
+      "id": 26,
+      "email": "teste@teste.com",
+      "score": 3,
+      "movie": 4
+    },
+    {
+      "id": 27,
+      "email": "teste@teste.com",
+      "score": 5,
+      "movie": 4
+    },
+    {
+      "id": 28,
+      "email": "teste@teste.com",
+      "score": 5,
+      "movie": 4
+    },
+    {
+      "id": 29,
+      "email": "teste@teste.com",
+      "score": 5,
+      "movie": 1
+    },
+    {
+      "id": 30,
+      "email": "teste@teste.com",
+      "score": 5,
+      "movie": 1
+    },
+    {
+      "id": 31,
+      "email": "teste@teste.com",
+      "score": 5,
+      "movie": 1
+    },
+    {
+      "id": 32,
+      "email": "teste@teste.com",
+      "score": 5,
+      "movie": 1
+    },
+    {
+      "id": 33,
+      "email": "teste@teste.com",
+      "score": 5,
+      "movie": 1
+    },
+    {
+      "id": 34,
+      "email": "teste@teste.com",
+      "score": 5,
+      "movie": 1
+    },
+    {
+      "id": 35,
+      "email": "teste@teste.com",
+      "score": 5,
+      "movie": 1
+    },
+    {
+      "id": 36,
+      "email": "teste@teste.com",
+      "score": 5,
+      "movie": 1
+    },
+    {
+      "id": 37,
+      "email": "teste@teste.com",
+      "score": 5,
+      "movie": 1
+    },
+    {
+      "id": 38,
+      "email": "teste@teste.com",
+      "score": 5,
+      "movie": 1
+    },
+    {
+      "id": 39,
+      "email": "halfshalf7@gmail.com",
+      "score": 5,
+      "movie": 1
+    },
+    {
+      "id": 40,
+      "email": "teste@teste.com",
+      "score": 5,
+      "movie": 1
+    },
+    {
+      "id": 41,
+      "email": "teste@teste.com",
+      "score": 5,
+      "movie": 1
+    },
+    {
+      "id": 42,
+      "email": "teste@teste.com",
+      "score": 5,
+      "movie": 1
+    },
+    {
+      "id": 43,
+      "email": "teste@teste.com",
+      "score": 5,
+      "movie": 9
+    },
+    {
+      "id": 44,
+      "email": "teste@teste.com",
+      "score": 5,
+      "movie": 2
     }
   ]
 }

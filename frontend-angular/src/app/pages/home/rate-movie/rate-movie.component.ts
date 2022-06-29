@@ -31,8 +31,9 @@ export class RateMovieComponent implements OnInit {
     this.form = this.fb.group({
       id: [null],
       email: [null, [Validators.email, Validators.required]],
-      score: [0.0, [Validators.required]],
-      movie: [null, [Validators.required]],
+      score_opt: [0.0, [Validators.required]],
+      score: [0.0],
+      movie: [0, [Validators.required]],
     });
   }
 
@@ -56,9 +57,17 @@ export class RateMovieComponent implements OnInit {
    * Finaliza o preenchimento do formulário, realizando sua inclusão na base de dados
    */
   submit() {
-    //Adiciona o id do filme em que a avaliação foi registrada
+    //Converte a classificação do usuário em number
+    let score: number = Number.parseFloat(this.form.value['score_opt']);
+    console.log(typeof score);
+
+    //remove atributo do form pois possui valor em formato string
+    this.form.removeControl('score_opt');
+
+    //Adiciona o id do filme em que a avaliação foi registrada e sua classificação
     this.form.patchValue({
-      movie: this.movieId,
+      score: score,
+      movie: Number.parseInt(this.movieId),
     });
     this.scoreService.create(this.form.value).subscribe({
       next: () => {
