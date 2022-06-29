@@ -7,9 +7,10 @@
       <img mat-card-image src="{{ movie.image }}" alt="Movie photo" />
       <mat-card-content>
         <div class="score">
-          <app-rating [rating]="movie.score"></app-rating>
+          <app-rating [rating]="getScore(movie.id)"></app-rating>
           <p>
-            <b>{{ movie.score }}</b>
+            <!-- <b>{{ movie.score }}</b> -->
+            <b>{{ getScore(movie.id) }}</b>
           </p>
         </div>
       </mat-card-content>
