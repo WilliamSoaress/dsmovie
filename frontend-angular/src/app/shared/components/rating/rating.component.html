@@ -1,0 +1,13 @@
+<!-- <div>
+  <mat-icon>{{ star(fill[1]) }}</mat-icon>
+  <mat-icon>star_rate</mat-icon>
+  <mat-icon>star_rate</mat-icon>
+  <mat-icon>star_half</mat-icon>
+  <mat-icon>star_border</mat-icon>
+</div> -->
+
+<div class="container">
+  <mat-icon *ngFor="let ratingId of ratingArray; index as i" [id]="'star_' + i">
+    {{ iconStatus(i) }}
+  </mat-icon>
+</div>

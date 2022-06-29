@@ -1,0 +1,11 @@
+/* Container do score*/
+.container {
+  display: flex;
+  width: auto;
+  justify-content: center;
+}
+
+/* Define a cor das estrelas */
+.container mat-icon {
+  color: orange;
+}
