@@ -5,7 +5,8 @@
       "score": 4.5,
       "count": 2,
       "title": "The Witcher",
-      "image": "https://www.themoviedb.org/t/p/w533_and_h300_bestv2/jBJWaqoSCiARWtfV0GlqHrcdidd.jpg"
+      "image": "https://www.themoviedb.org/t/p/w533_and_h300_bestv2/jBJWaqoSCiARWtfV0GlqHrcdidd.jpg",
+      "trailer": "https://www.youtube.com/watch?v=tjujvMkqWe4"
     },
     {
       "id": 2,
@@ -202,6 +203,14 @@
       "image": "https://www.themoviedb.org/t/p/w533_and_h300_bestv2/2cUsDz4TzFYHrKktT1bKHHQ7Cgm.jpg",
       "score": 0,
       "count": 0
+    },
+    {
+      "id": 30,
+      "title": "The Boys",
+      "image": "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/mY7SeH4HFFxW1hiI6cWuwCRKptN.jpg",
+      "score": 0,
+      "count": 0,
+      "trailer": "https://youtu.be/I0RC15nmjpU"
     }
   ],
   "tb_score": [
@@ -378,6 +387,12 @@
       "email": "teste@teste.com",
       "score": 5,
       "movie": 2
+    },
+    {
+      "id": 45,
+      "email": "teste@teste.com",
+      "score": 5,
+      "movie": 30
     }
   ]
 }

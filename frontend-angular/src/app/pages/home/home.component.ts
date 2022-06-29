@@ -72,4 +72,26 @@ export class HomeComponent implements OnInit {
     let finalScore: number = totalScore / scoreCount;
     return Number.parseFloat(finalScore.toFixed(1));
   }
+
+  /**
+   * Conta a quantidade de classificações existentes para um filme
+   * @param id Id do filme a ser contadas as classificações existentes
+   * @returns Quantidade de classificações existentes
+   */
+  countScores(id: any): number {
+    let scoreCount: number = 0;
+
+    if (this.refScores.find((e) => e.movie == id)) {
+      for (let i = 0; i < this.refScores.length; i++) {
+        if (this.refScores[i].movie == id) {
+          scoreCount++;
+        }
+      }
+    }
+    if (scoreCount == 0) {
+      return 0;
+    }
+
+    return scoreCount;
+  }
 }

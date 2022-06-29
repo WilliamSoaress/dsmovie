@@ -17,12 +17,22 @@
 
         <!-- CAMPO IMAGEM -->
         <mat-form-field class="flex-item">
-          <mat-label>Imagem</mat-label>
+          <mat-label>URL da Imagem</mat-label>
           <input matInput formControlName="image" />
           <mat-error *ngIf="form.invalid">{{
             getErrorMessage("image")
           }}</mat-error>
           <mat-hint>Informe o endereço da imagem de capa do filme</mat-hint>
+        </mat-form-field>
+
+        <!-- CAMPO TRAILER URL -->
+        <mat-form-field class="flex-item">
+          <mat-label>Trailer</mat-label>
+          <input matInput formControlName="trailer" />
+          <mat-error *ngIf="form.invalid">{{
+            getErrorMessage("trailer")
+          }}</mat-error>
+          <mat-hint>Informe o endereço do trailer do filme</mat-hint>
         </mat-form-field>
 
         <!-- AÇÕES DO FORMULÁRIO -->

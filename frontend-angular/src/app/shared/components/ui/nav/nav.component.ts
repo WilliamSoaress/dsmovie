@@ -11,7 +11,17 @@ export class NavComponent implements OnInit {
 
   ngOnInit(): void {}
 
+  /**
+   * Navega para a página de novos cadastros
+   */
   public new(): void {
     this.router.navigateByUrl('/new');
+  }
+
+  /**
+   * Navega para a página principal da aplicação
+   */
+  public home(): void {
+    this.router.navigateByUrl('/');
   }
 }

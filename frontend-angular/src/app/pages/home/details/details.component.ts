@@ -25,6 +25,7 @@ export class DetailsComponent implements OnInit {
       image: ['', [Validators.required]],
       score: [0.0],
       count: [0],
+      trailer: [null],
     });
   }
 

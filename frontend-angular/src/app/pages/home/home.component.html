@@ -4,7 +4,7 @@
       <mat-card-header>
         <mat-card-title>{{ movie.title }}</mat-card-title>
       </mat-card-header>
-      <img mat-card-image src="{{ movie.image }}" alt="Movie photo" />
+      <img mat-card-image src="{{ movie.image }} " alt="Movie photo" />
       <mat-card-content>
         <div class="score">
           <app-rating [rating]="getScore(movie.id)"></app-rating>
@@ -12,13 +12,16 @@
             <!-- <b>{{ movie.score }}</b> -->
             <b>{{ getScore(movie.id) }}</b>
           </p>
+          <p>{{ countScores(movie.id) }} avaliações</p>
         </div>
       </mat-card-content>
       <mat-card-actions>
         <button mat-raised-button (click)="onRate(movie.id)" color="primary">
           Avaliar
         </button>
-        <button mat-raised-button>Trailer</button>
+        <button *ngIf="!!movie.trailer" mat-raised-button>
+          <a href="{{ movie.trailer }}" target="_blank">Trailer</a>
+        </button>
       </mat-card-actions>
     </mat-card>
   </div>

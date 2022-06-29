@@ -4,4 +4,5 @@ export interface Movie {
   image: string;
   score: number;
   count: number;
+  trailer: string;
 }
