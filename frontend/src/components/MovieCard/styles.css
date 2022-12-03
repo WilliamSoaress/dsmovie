@@ -1,0 +1,7 @@
+.dsmovie-icon {
+    background-color: var(--color-primary);
+    height: 40px;
+    width: 180px;
+    display: flex;
+    flex-direction: row;
+}

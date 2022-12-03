@@ -10,6 +10,9 @@ import com.devsuperior.dsmovie.dto.MovieDTO;
 import com.devsuperior.dsmovie.entities.Movie;
 import com.devsuperior.dsmovie.repositories.MovieRepository;
 
+import java.util.Optional;
+import java.util.UUID;
+
 @Service
 public class MovieService {
 
@@ -24,14 +27,24 @@ public class MovieService {
 	}
 	
 	@Transactional(readOnly = true)
-	public MovieDTO findById(Long id) {
+	public MovieDTO findByIdDto(Long id) {
 		Movie result = repository.findById(id).get();
 		MovieDTO dto = new MovieDTO(result);
 		return dto;
+	}
+
+	public Optional<Movie> findById(long id) {
+		return repository.findById(id);
 	}
 
 	@Transactional
 	public Movie saveMovie(Movie movie) {
 		return repository.save(movie);
 	}
+
+	@Transactional
+	public void deleteMovie(Movie movie) {
+		repository.delete(movie);
+	}
+
 }

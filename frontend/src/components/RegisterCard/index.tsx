@@ -1,5 +1,5 @@
 import axios, { AxiosRequestConfig } from "axios";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { Movie } from "types/movie";
 import { BASE_URL } from "utils/requests";
@@ -15,9 +15,26 @@ function RegisterCard({ movieId }: Props) {
 
   const [movie, setMovie] = useState<Movie>();
 
+  useEffect(() => {
+    if (movieId !== 'undefined') {
+      axios.get(`${BASE_URL}/movies/${movieId}`).then((response) => {
+        setMovie(response.data);
+      });
+    }
+  }, [movieId]);
+
+  function getMovie() {
+    axios.get(`${BASE_URL}/movies/${movieId}`).then((response) => {
+      let data = response.data;
+
+      setMovie(data);
+    });
+  }
+
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
+    // getMovie();
     const title = (event.target as any).title.value;
     const image = (event.target as any).image.value;
     const trailer = (event.target as any).trailer.value;
@@ -34,9 +51,27 @@ function RegisterCard({ movieId }: Props) {
       },
     };
 
-    axios(config).then((response) => {
-      navigate("/");
-    });
+    const configUpdate: AxiosRequestConfig = {
+      baseURL: BASE_URL,
+      method: "PUT",
+      url: `/movies/${movieId}`,
+      data: {
+        movieId: movieId,
+        title: title,
+        image: image,
+        trailer: trailer,
+      },
+    };
+
+    if (movieId !== 'undefined') {
+      axios(configUpdate).then((response) => {
+        navigate("/");
+      }).catch(error => console.error(error));
+    } else {
+      axios(config).then((response) => {
+        navigate("/");
+      });
+    }
   };
 
   return (
@@ -45,18 +80,37 @@ function RegisterCard({ movieId }: Props) {
         <h3>Cadastro de filmes</h3>
         <form className="dsmovie-form" onSubmit={handleSubmit}>
           <div className="form-group dsmovie-form-group">
+            <input type="text" defaultValue={movie?.id} hidden />
             <label htmlFor="title">Informe o título do filme</label>
-            <input type="text" className="form-control" id="title" required={true} />
+            <input
+              type="text"
+              className="form-control"
+              id="title"
+              defaultValue={movie?.title}
+              required={true}
+            />
           </div>
           <div className="form-group dsmovie-form-group">
             <label htmlFor="image">Informe o endereço da imagem do filme</label>
-            <input type="url" className="form-control" id="image" required={true} />
+            <input
+              type="url"
+              className="form-control"
+              id="image"
+              defaultValue={movie?.image}
+              required={true}
+            />
           </div>
           <div className="form-group dsmovie-form-group">
             <label htmlFor="trailer">
               Informe o endereço do trailer do filme
             </label>
-            <input type="url" className="form-control" id="trailer" required={true} />
+            <input
+              type="url"
+              className="form-control"
+              id="trailer"
+              defaultValue={movie?.trailer ?? ""}
+              required={true}
+            />
           </div>
 
           <div className="dsmovie-form-btn-container">
